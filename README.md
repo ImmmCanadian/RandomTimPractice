@@ -1,4 +1,1 @@
-# RandomTimPractice
-# RandomTimPractice
-# RandomTimPractice
-# RandomTimPractice
+Random practice questions I am doing
