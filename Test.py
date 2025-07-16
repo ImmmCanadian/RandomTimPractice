@@ -1,32 +1,25 @@
-import random
+from typing import List
 
-ROWS=3
-COLUMNS=3
+def merge(nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+        
+        index = n + m - 1
+        n -= 1
+        m -= 1
 
-SYMBOLS={
-    "A":4,
-    "B":8,
-    "C":12,
-    "D":16
-}
+        while n >= 0:  
+            if m>=0 and nums2[n] >= nums1[m]:
+                nums1[index] = nums2[n]
+                n -= 1
+            else:
+                nums1[index] = nums1[m]
+                m -= 1
+            index -= 1
+        
+        return nums1
 
-def get_Slot_Machine_Spin(rows,columns,symbols):
-    all_symbols = []
-    for symbol, symbol_count in symbols.items():
-        temp = [symbol]*symbol_count
-        all_symbols = all_symbols + temp
-    
-    column = []
-    temp=[]
+nums1=[2,0]
+num2=[1]
 
-    for i in range(columns*rows):
-        value = random.choice(all_symbols)
-        temp.append(value)
-        if (i+1) % 3 == 0:
-            column.append(temp)
-            temp=[]
-    
-    return column
+print(merge(nums1,1,num2,1))
 
-print(get_Slot_Machine_Spin(ROWS,COLUMNS,SYMBOLS))
 
