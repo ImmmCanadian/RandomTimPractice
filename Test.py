@@ -132,8 +132,6 @@ def main(stdscr):
     path = find_path(maze, stdscr)
     if path:
         stdscr.addstr(dim*2 + 3, 0, "Path found! Press any key to exit.")
-    else:
-        stdscr.addstr(dim*2 + 3, 0, "No path found.")
     stdscr.refresh()
     stdscr.getch()
 
