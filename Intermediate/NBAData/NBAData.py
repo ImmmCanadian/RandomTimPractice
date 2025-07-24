@@ -3,6 +3,7 @@ from pprint import PrettyPrinter
 from dotenv import load_dotenv
 import os
 
+#set the path to out current working directory
 script_dir = os.path.dirname(os.path.abspath(__file__))
 os.chdir(script_dir)
 
@@ -14,8 +15,6 @@ printer = PrettyPrinter()
 
 # Access the API key
 api_key = os.getenv('NBA_API_KEY')
-
-print(api_key)
 
 BASE_URL = "https://api.balldontlie.io/v1"
 END_POINT="/games"
